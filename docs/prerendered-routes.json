@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/portfolio-website": {},
+    "/portfolio-website/dashboard": {},
+    "/portfolio-website/dynamicComp": {},
+    "/portfolio-website/login": {}
+  }
+}
