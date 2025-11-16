@@ -22,10 +22,11 @@
     <ul>
       <li><a href="#hero" class="active" (click)="closeHeader($event)"><i class="bi bi-house navicon"></i>Home</a></li>
       <li><a href="#about" (click)="closeHeader($event)"><i class="bi bi-person navicon"></i> About</a></li>
-      <li><a href="#resume" (click)="closeHeader($event)"><i class="bi bi-file-earmark-text navicon"></i> Resume</a>
-      </li>
+      <li><a href="#resume" (click)="closeHeader($event)"><i class="bi bi-file-earmark-text navicon"></i> Resume</a> </li>
       <li><a href="#portfolio" (click)="closeHeader($event)"><i class="bi bi-images navicon"></i> Portfolio</a></li>
       <li><a href="#services" (click)="closeHeader($event)"><i class="bi bi-hdd-stack navicon"></i> Services</a></li>
+      <li><a href="#pricing" (click)="closeHeader($event)"><i class="bi bi-hdd-stack navicon"></i> Pricing</a></li>
+       
       <!-- <li class="dropdown"><a href="#" (click)="closeHeader($event)"><i class="bi bi-menu-button navicon"></i> <span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
           <ul>
             <li><a href="#">Dropdown 1</a></li>
@@ -604,9 +605,115 @@
 </section>
 <!-- /Testimonials Section -->
 
+<!-- Pricing Section -->
+<section id="pricing" class="pricing section ">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title " data-aos="fade-up">
+      <h2>Pricing</h2>
+      <p>Flexible plans for freelance & enterprise work — pick what fits your project.</p>
+    </div>
+
+    <div class="pricing-wrapper bg-white rounded-3 p-4 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+      <div class="row gy-4 justify-content-center">
+
+        <!-- Basic -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card pricing-card h-100">
+            <div class="card-body d-flex flex-column">
+              <div class="top d-flex justify-content-between align-items-start mb-3">
+                <h5 class="card-title mb-0">Basic</h5>
+                <span class="badge badge-outline">Starter</span>
+              </div>
+
+              <p class="card-text text-muted small">Have design ready to build or small budget</p>
+
+              <div class="price my-3">
+                <span class="price-amount">$15</span><small class="price-unit">/Hour</small>
+              </div>
+
+              <ul class="list-unstyled features mb-4">
+                <li><i class="bi bi-arrow-right-short me-2"></i>Need your wireframe</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Design with Figma, Framer</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Product Design</li>
+                <li class="text-muted"><i class="bi bi-dash me-2"></i>Digital Marketing</li>
+                <li class="text-muted"><i class="bi bi-dash me-2"></i>Custom Support</li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="#contact" class="btn btn-success btn-sm w-100">Order Now <i class="bi bi-cart ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Standard -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card pricing-card h-100 highlight">
+            <div class="card-body d-flex flex-column">
+              <div class="top d-flex justify-content-between align-items-start mb-3">
+                <h5 class="card-title mb-0">Standard</h5>
+                <span class="badge badge-primary">Popular</span>
+              </div>
+
+              <p class="card-text text-muted small">Need full design & implementation — best balance</p>
+
+              <div class="price my-3">
+                <span class="price-amount">$59</span><small class="price-unit">/Hour</small>
+              </div>
+
+              <ul class="list-unstyled features mb-4">
+                <li><i class="bi bi-arrow-right-short me-2"></i>Website Design</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Mobile Apps Design</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Product Design</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Digital Marketing</li>
+                <li class="text-muted"><i class="bi bi-dash me-2"></i>Custom Support</li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="#contact" class="btn btn-success w-100">Order Now <i class="bi bi-cart ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card pricing-card h-100">
+            <div class="card-body d-flex flex-column">
+              <div class="top d-flex justify-content-between align-items-start mb-3">
+                <h5 class="card-title mb-0">Premium</h5>
+                <span class="badge badge-outline">Enterprise</span>
+              </div>
+
+              <p class="card-text text-muted small">Large teams, SLAs, extended support</p>
+
+              <div class="price my-3">
+                <span class="price-amount">$120</span><small class="price-unit">/Hour</small>
+              </div>
+
+              <ul class="list-unstyled features mb-4">
+                <li><i class="bi bi-arrow-right-short me-2"></i>Dedicated Support</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Onsite/Remote Training</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Advanced Integrations</li>
+                <li><i class="bi bi-arrow-right-short me-2"></i>Priority SLA</li>
+                <li class="text-muted"><i class="bi bi-dash me-2"></i>Custom Reporting</li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="#contact" class="btn btn-outline-success w-100">Contact Sales <i class="bi bi-telephone ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- row -->
+    </div> <!-- pricing-wrapper -->
+  </div>
+</section>
+<!-- End Pricing Section -->
 
   <!-- Contact Section -->
-  <section id="contact" class="contact section">
+  <section id="contact" class="contact section light-background">
     <div class="container section-title" data-aos="fade-up">
       <h2>Contact</h2>
       <p>Get in touch for work inquiries or collaborations.</p>
@@ -724,7 +831,7 @@
 
 </main>
 
-<footer id="footer" class="footer position-relative light-background">
+<footer id="footer" class="footer position-relative ">
   <div class="container">
     <div class="copyright text-center ">
       <p>© <strong class="px-1 sitename">NAVIN T V</strong> All Rights Reserved</p>

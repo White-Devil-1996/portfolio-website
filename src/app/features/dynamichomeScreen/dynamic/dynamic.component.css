@@ -110,3 +110,96 @@
   transform: translateY(-2px);
   text-decoration: none;
 }
+
+
+/* Pricing section visuals */
+.pricing-wrapper {
+  border-radius: 14px;
+  padding: 34px;
+}
+
+/* Card */
+.pricing-card {
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 12px;
+  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(18, 38, 63, 0.08);
+}
+
+/* Highlight center card */
+.pricing-card.highlight {
+  transform: translateY(-4px);
+  border: 1px solid rgba(34,139,84,0.12);
+  box-shadow: 0 8px 28px rgba(34,139,84,0.06);
+}
+
+/* Price */
+.price {
+  display:flex;
+  align-items:baseline;
+  gap:.5rem;
+}
+
+.price-amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2a9d6f; /* green accent, change to match your theme */
+  line-height:1;
+}
+
+.price-unit {
+  color: #6c757d;
+  margin-left: 0.25rem;
+}
+
+/* badges */
+.badge-outline {
+  background: transparent;
+  color: #6c757d;
+  border: 1px solid rgba(108,117,125,0.12);
+  padding: 6px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.badge-primary {
+  background:#2a9d6f;
+  color:#fff;
+  padding:6px 8px;
+  border-radius:10px;
+  font-size:0.8rem;
+}
+
+/* Features */
+.pricing-card .features li {
+  padding: 6px 0;
+  color: #495057;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .pricing-wrapper {
+    padding: 22px;
+  }
+  .price-amount { font-size:1.6rem; }
+}
+
+/* Button style override to match your site */
+.pricing-card .btn-success {
+  background: #2a9d6f;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: none;
+}
+
+.pricing-card .btn-outline-success {
+  border-color: #2a9d6f;
+  color: #2a9d6f;
+  background: transparent;
+}
