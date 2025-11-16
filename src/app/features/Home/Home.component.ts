@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     } 
     else if (origin.includes('localhost')) {
       console.log('Running on production server');
-      // this.router.navigate(['/dynamicComp']);  
+      this.router.navigate(['/dynamicComp']);  
     } 
     else{
       console.log('Running on localhost');
