@@ -1,17 +1,28 @@
 import { Component, OnInit, AfterViewInit, signal, PLATFORM_ID, Inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 import { LoaderService } from '../../../core/loader.service';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-dynamic',
   templateUrl: './dynamic.component.html',
   styleUrls: ['./dynamic.component.css'],
+  imports: [CommonModule, FormsModule],
   standalone: true
 })
 export class DynamicComponent implements OnInit, AfterViewInit {
   headerShow = signal(false);
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object, private loader: LoaderService) { }
+  // Contact UI flags
+  loading = false;
+  sent = false;
+  error = '';
+private sendMailUrl = 'http://localhost:3000/api/send-mail';
+
+  // constructor(@Inject(PLATFORM_ID) private platformId: Object, private loader: LoaderService) { }
+    constructor(@Inject(PLATFORM_ID) private platformId: Object, private loader: LoaderService, private http: HttpClient) { }
+
 
   ngOnInit() {
   }
@@ -326,6 +337,41 @@ export class DynamicComponent implements OnInit, AfterViewInit {
 
     window.addEventListener('load', navmenuScrollspy);
     window.addEventListener('scroll', scrollHandler, { passive: true });
+  }
+
+
+   submitContact(form: NgForm) {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.error = '';
+    this.sent = false;
+
+    if (!form || form.invalid) {
+      this.error = 'Please fill all required fields.';
+      return;
+    }
+
+    const body = {
+      name: form.value.name,
+      email: form.value.email,
+      subject: form.value.subject,
+      message: form.value.message
+    };
+
+    this.loading = true;
+
+    this.http.post<any>(this.sendMailUrl, body).subscribe({
+      next: (res) => {
+        this.loading = false;
+        this.sent = true;
+        form.resetForm();
+      },
+      error: (err) => {
+        console.error('send-mail error', err);
+        this.loading = false;
+        this.error = err?.error?.message ?? 'Failed to send message. Try again later.';
+      }
+    });
   }
 
 }
